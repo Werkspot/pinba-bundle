@@ -34,7 +34,7 @@ class TimedTwigEngine extends TwigEngine
      */
     public function __construct(\Twig_Environment $environment, TemplateNameParserInterface $parser, FileLocatorInterface $locator, Stopwatch $stopwatch)
     {
-        parent::__construct($environment, $parser, $locator, $globals);
+        parent::__construct($environment, $parser, $locator);
 
         $this->stopwatch = $stopwatch;
     }
