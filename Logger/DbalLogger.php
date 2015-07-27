@@ -55,7 +55,6 @@ class DbalLogger implements SQLLogger
     {
         if (null !== $this->stopwatchEvent) {
             $this->stopwatchEvent->stop();
-            $this->stopwatchEvent = null;
         }
     }
 }
