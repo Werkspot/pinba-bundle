@@ -38,10 +38,11 @@ class DbalLogger implements SQLLogger
             );
 
             if (preg_match('/^\s*(\w+)\s/u', $sql, $matches)) {
-                $tags['group'] = 'doctrine::' . strtolower($matches[1]);
+                $tags['group'] = 'doctrine';
+                $tags['op'] = strtolower($matches[1]);
             }
             else {
-                $tags['group'] = 'doctrine::';
+                $tags['group'] = 'doctrine';
             }
 
             $this->stopwatchEvent = $this->stopwatch->start($tags);

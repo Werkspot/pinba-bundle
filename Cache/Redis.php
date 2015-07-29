@@ -32,7 +32,8 @@ class Redis extends \Redis
     protected function getStopwatchEvent($methodName)
     {
         $tags = $this->stopwatchAdditionalTags;
-        $tags['group'] = 'redis::' . $methodName;
+        $tags['group'] = 'redis';
+        $tags['op'] = $methodName;
 
         if ($this->serverName) {
             $tags['server'] = $this->serverName;
